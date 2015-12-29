@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Custom CSS -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top" scroll="no" style="overflow-y: scroll; overflow-x: hidden">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">Back to GOexplorAr</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    </head>
+  <body>
+
+    <div class="logmod">
+  <div class="logmod__wrapper">
+    <div class="logmod__container">
+      <ul class="logmod__tabs">
+        <li data-tabtar="lgm-2"><a href="#">Login</a></li>
+        <li data-tabtar="lgm-1"><a href="#">Sign Up</a></li>
+      </ul>
+
+      <div class="logmod__tab-wrapper">
+      <!--Sign up-->
+      <div class="logmod__tab lgm-1">
+        <div class="logmod__heading">
+          <span class="logmod__heading-subtitle">Enter your personal details <strong>to create an acount</strong></span>
+        </div>
+        <div class="logmod__form">
+          <form action="/signup" method="post" accept-charset="utf-8" action="#" class="simform" id="formCreate" onSubmit="return verify()">
+            <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-name">Email*</label>
+                <input class="string optional" maxlength="255" id="user-email" name="userMail" placeholder="Email" type="email" size="50" />
+              </div>
+            </div>
+            <div class="sminputs">
+              <div class="input string optional">
+                <label class="string optional" for="user-pw">Password *</label>
+                <input class="string optional" maxlength="255" id="user-pw" name="userPw" placeholder="Password" type="text" size="50" />
+              </div>
+              <div class="input string optional">
+                <label class="string optional" for="user-pw-repeat">Repeat password *</label>
+                <input class="string optional" maxlength="255" id="user-pw-repeat" name="userPwConfirm" placeholder="Repeat password" type="text" size="50" />
+              </div>
+            </div>
+            <div class="simform__actions">
+              <input class="reset" name="Reset" type="reset" value="Reset" /><!--Please write the CSS for Reset button -->
+              <input type="submit" class="sumbit" name="commit" id="signupBtn" value="Create Account" />
+              <span class="simform__actions-sidetext">By creating an account you agree to our <a class="special" href="#" target="_blank" role="link">Terms & Privacy</a></span>
+            </div> 
+          </form>
+        </div> 
+        <div class="logmod__alter">
+          <div class="logmod__alter-container">
+            <a href="#" class="connect facebook">
+              <div class="connect__icon">
+                <i class="fa fa-facebook"></i>
+              </div>
+              <div class="connect__context">
+                <span>Create an account with <strong>Facebook</strong></span>
+              </div>
+            </a>
+              
+            <a href="#" class="connect googleplus">
+              <div class="connect__icon">
+                <i class="fa fa-google-plus"></i>
+              </div>
+              <div class="connect__context">
+                <span>Create an account with <strong>Google+</strong></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Login -->
+      <div class="logmod__tab lgm-2">
+        <div class="logmod__heading">
+          <span class="logmod__heading-subtitle">Enter your email and password <strong>to sign in</strong></span>
+        </div> 
+        <div class="logmod__form">
+          <form action="/login" method="post" accept-charset="utf-8" action="#" class="simform" id="formLogin" onSubmit="return verifyLogin()">
+            <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-name">Email*</label>
+                <input class="string optional" maxlength="255" id="user-email" name="luname" placeholder="Email" type="email" size="50" />
+              </div>
+            </div>
+            <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-pw">Password *</label>
+                <input class="string optional" maxlength="255" id="user-pw" name="lpwrd" placeholder="Password" type="password" size="50" />
+                						<span class="hide-password">Show</span>
+              </div>
+            </div>
+            <div class="simform__actions">
+              <input class="reset" name="Reset" type="reset" value="Reset" /><!-- Used to  clear the textboxes -->
+              <input class="sumbit" name="commit" id="loginBtn" type="submit" value="Log In" />
+              
+              <span class="simform__actions-sidetext"><a class="special" role="link" href="#">Forgot your password? Click here</a></span>
+            </div> 
+          </form>
+        </div> 
+        <div class="logmod__alter">
+          <div class="logmod__alter-container">
+            <a href="#" class="connect facebook">
+              <div class="connect__icon">
+                <i class="fa fa-facebook"></i>
+              </div>
+              <div class="connect__context">
+                <span>Sign in with <strong>Facebook</strong></span>
+              </div>
+            </a>
+            <a href="#" class="connect googleplus">
+              <div class="connect__icon">
+                <i class="fa fa-google-plus"></i>
+              </div>
+              <div class="connect__context">
+                <span>Sign in with <strong>Google+</strong></span>
+              </div>
+            </a>
+          </div>
+        </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/index.js"></script>
+    <script src="js/login.js"></script>
+
+    
+    
+    
+  </body>
+</html>
