@@ -1,32 +1,15 @@
  var markers = [
     {
-        "title": 'Aksa Beach',
-        "lat": '19.1759668',
-        "lng": '72.79504659999998',
+        "title": 'Baga Beach',
+        "lat": '15.4992032',
+        "lng": '73.7649613',
+        "description": 'Baga Beach'
     },
     {
-        "title": 'Juhu Beach',
-        "lat": '19.0883595',
-        "lng": '72.82652380000002',
-        "description": 'Juhu Beach is one of favourite tourist attractions situated in Mumbai.'
-    },
-    {
-        "title": 'Girgaum Beach',
-        "lat": '18.9542149',
-        "lng": '72.81203529999993',
-        "description": 'Girgaum Beach commonly known as just Chaupati is one of the most famous public beaches in Mumbai.'
-    },
-    {
-        "title": 'Jijamata Udyan',
-        "lat": '18.979006',
-        "lng": '72.83388300000001',
-        "description": 'Jijamata Udyan is situated near Byculla station is famous as Mumbai (Bombay) Zoo.'
-    },
-    {
-        "title": 'Sanjay',
-        "lat": '19.2147067',
-        "lng": '72.91062020000004',
-        "URL": 'aguada.html'
+        "title": 'Sinquerium Beach',
+        "lat": '15.5614546',
+        "lng": '73.7473837',
+        "description": 'Sinquerium Beach'
     }
     ];
     window.onload = function () {

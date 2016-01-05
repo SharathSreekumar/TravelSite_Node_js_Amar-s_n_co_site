@@ -1,33 +1,28 @@
  var markers = [
-    {
-        "title": 'Aksa Beach',
-        "lat": '19.1759668',
-        "lng": '72.79504659999998',
+      {
+        "title": 'Safa Masjid',
+        "lat": '15.4066289',
+        "lng": '73.9978319',
+        "description": 'Safa Masjid'
     },
     {
-        "title": 'Juhu Beach',
-        "lat": '19.0883595',
-        "lng": '72.82652380000002',
-        "description": 'Juhu Beach is one of favourite tourist attractions situated in Mumbai.'
+        "title": 'Basilica of Bom Jesus',
+        "lat": '15.500899',
+        "lng": '73.9094385',
+        "description": 'Basilica of Bom Jesus'
     },
-    {
-        "title": 'Girgaum Beach',
-        "lat": '18.9542149',
-        "lng": '72.81203529999993',
-        "description": 'Girgaum Beach commonly known as just Chaupati is one of the most famous public beaches in Mumbai.'
+      {
+        "title": 'Tambi Surla Mahadev Temple',
+        "lat": '15.4390326',
+        "lng": '74.2525798',
+        "description": 'Tambi Surla Mahadev Temple'
     },
-    {
-        "title": 'Jijamata Udyan',
-        "lat": '18.979006',
-        "lng": '72.83388300000001',
-        "description": 'Jijamata Udyan is situated near Byculla station is famous as Mumbai (Bombay) Zoo.'
+       {
+        "title": 'Shri Deva Bodgeshwar Sansthan',
+        "lat": '15.5845423',
+        "lng": '73.8036004',
+        "description": 'Shri Deva Bodgeshwar Sansthan'
     },
-    {
-        "title": 'Sanjay',
-        "lat": '19.2147067',
-        "lng": '72.91062020000004',
-        "URL": 'aguada.html'
-    }
     ];
     window.onload = function () {
         LoadMap();

@@ -39,7 +39,14 @@ exports.getUserByUser = function(req,res){//for searching the specific user i.e.
             if(req.body.luname == user[u].userid && req.body.lpwrd == user[u].password){ // search for the user & passwrd
                 //res.send("Login Successful...");
                 console.log('Login Successful...');
-                res.render('GOexplorAr');// page to load
+                res.cookie('user',req.body.luname, {maxAge : 30 * 60 * 1000});// 1 sec = 1000
+                res.cookie('pass',req.body.lpwrd, {maxAge : 30 * 60 * 1000});
+                res.cookie('page','/');
+                //res.render('GOexplorAr');
+                res.render('GOexplorAr',{
+                    userAcc : req.cookies.user,
+                    links : "/"
+                });// page to load
             }else if(req.body.luname == user[u].userid && req.body.lpwrd != user[u].password){// if username exist, but password is incorrect
                 //res.send("Invalid Password...");
                 console.log('Invalid Password...');
