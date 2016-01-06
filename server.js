@@ -39,11 +39,11 @@ app.get('/',function(req,res){// loads the main-page i.e. 1st page
 		linkes = "/login";
 	}else{
 		useAcc = req.cookies.user;
-		linkes = req.cookies.page;
+		linkes = "/logout";
 	}
     res.render('GOexplorAr',{
                     userAcc : useAcc,
-                    links : '/logout'
+                    links : linkes
                     });
 	console.log("Cookies:",req.cookies.user);
 	console.log("Cookies pass:",req.cookies.pass);
@@ -190,9 +190,9 @@ app.get('/logout',function(req,res){
     res.clearCookie('pass');
     res.clearCookie('page');
 	res.render('GOexplorAr',{
-                    userAcc : "Login",
-                    links : '/login'
-                    });
+        userAcc : "Login",
+        links : '/login'
+    });
 });
 
 //post operations

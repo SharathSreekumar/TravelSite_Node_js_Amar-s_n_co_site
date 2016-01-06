@@ -25,35 +25,42 @@ exports.postNewUser = function(req,res){//create new account using post
         userAcc.password = req.body.userPw; // equating html variable 'name' values to the database variables
         userAcc.save(); // save the values equated
         console.log('Successful');
-        res.render('GOexplorAr'); // page to load
+        res.render('login'); // page to load
     }
 }
 
 //for post operation
 exports.getUserByUser = function(req,res){//for searching the specific user i.e. for Login
     var userAcc = new usr();
-    usr.find(req.body.luname,function(err,user){
-        if(err)
-            res.send(err);
-        for(var u in user){
-            if(req.body.luname == user[u].userid && req.body.lpwrd == user[u].password){ // search for the user & passwrd
+    var cnt = 0;
+    usr.count(function(e, count){
+        usr.find(req.body.luname,function(err,user){
+            if(err)
+                res.send(err);
+            for(var u in user){
+                cnt += 1;
+                if(req.body.luname == user[u].userid && req.body.lpwrd == user[u].password){ // search for the user & passwrd
                 //res.send("Login Successful...");
-                console.log('Login Successful...');
-                res.cookie('user',req.body.luname, {maxAge : 30 * 60 * 1000});// 1 sec = 1000
-                res.cookie('pass',req.body.lpwrd, {maxAge : 30 * 60 * 1000});
-                res.cookie('page','/');
-                //res.render('GOexplorAr');
-                res.render('GOexplorAr',{
-                    userAcc : req.cookies.user,
-                    links : "/"
-                });// page to load
-            }else if(req.body.luname == user[u].userid && req.body.lpwrd != user[u].password){// if username exist, but password is incorrect
-                //res.send("Invalid Password...");
-                console.log('Invalid Password...');
-                res.render('login');
-            }else{
-                console.log('Such username doesnot exist...');
+                    console.log('Login Successful...');
+                    res.cookie('user',req.body.luname, {maxAge : 30 * 60 * 1000});// 1 sec = 1000
+                    res.cookie('pass',req.body.lpwrd, {maxAge : 30 * 60 * 1000});
+                    res.cookie('page','/');
+                    //res.render('GOexplorAr');
+                    res.render('GOexplorAr',{
+                        userAcc : req.cookies.user,
+                        links : "/logout"
+                    });// page to load
+                    return true;
+                }else if(req.body.luname == user[u].userid && req.body.lpwrd != user[u].password){// if username exist, but password is incorrect
+                    //res.send("Invalid Password...");
+                    console.log('Invalid Password...');
+                    res.render('login');
+                    return false;
+                }else if(cnt == count){
+                    console.log('Such username doesnot exist...');
+                    return false;
+                }
             }
-        }
+        });   
     });
 }
